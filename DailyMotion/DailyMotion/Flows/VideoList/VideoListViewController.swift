@@ -23,11 +23,14 @@ final class VideoListViewController: UIViewController {
     private lazy var loadingIndicator = UIActivityIndicatorView()
 
     private let presenter: VideoListPresenterProtocol
+    private let dispatcher: Dispatcher
     private weak var delegate: VideoListViewControllerDelegate?
 
     init(presenter: VideoListPresenterProtocol,
-         delegate: VideoListViewControllerDelegate) {
+         delegate: VideoListViewControllerDelegate,
+         dispatcher: Dispatcher = DispatchQueue.main) {
         self.presenter = presenter
+        self.dispatcher = dispatcher
         self.delegate = delegate
 
         super.init(nibName: nil, bundle: nil)
@@ -58,28 +61,30 @@ final class VideoListViewController: UIViewController {
         tableView.register(VideoTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.accessibilityIdentifier = "tableView"
 
         loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.accessibilityIdentifier = "activityIndicator"
     }
 }
 
 extension VideoListViewController: VideoListViewProtocol {
 
     func showLoading(_ isLoading: Bool) {
-        DispatchQueue.main.async {
+        dispatcher.async {
             self.tableView.isUserInteractionEnabled = !isLoading
             isLoading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
         }
     }
 
     func reloadData() {
-        DispatchQueue.main.async {
+        dispatcher.async {
             self.tableView.reloadData()
         }
     }
 
     func showError() {
-        DispatchQueue.main.async {
+        dispatcher.async {
             let alertController = UIAlertController(title: LocalizedString.Common.errorTitle,
                                                     message: nil,
                                                     preferredStyle: .alert)
@@ -99,11 +104,16 @@ extension VideoListViewController: UITableViewDataSource {
         let cell: VideoTableViewCell = tableView.dequeueReusableCell(for: indexPath)
         let video = presenter.videos[indexPath.row]
         cell.render(title: video.title, description: video.description, createdAt: video.formattedCreatedDate)
-        presenter.getImage(for: video.thumbnailURL) { image, urlString in
+        presenter.getImage(for: video.thumbnailURL) { [weak self] image, urlString in
+            guard let self = self else {
+                return
+            }
+
             guard video.thumbnailURL == urlString else {
                 return
             }
-            DispatchQueue.main.async {
+
+            self.dispatcher.async {
                 cell.setImage(image: image)
             }
         }

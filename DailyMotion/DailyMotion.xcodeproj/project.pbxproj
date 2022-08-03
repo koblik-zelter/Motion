@@ -42,6 +42,11 @@
 		2A96593B289A9D2800D4E220 /* ImageLoaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96593A289A9D2800D4E220 /* ImageLoaderMock.swift */; };
 		2A96593D289A9DB100D4E220 /* VideoListViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96593C289A9DB100D4E220 /* VideoListViewMock.swift */; };
 		2A965940289A9E7900D4E220 /* Video + Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96593F289A9E7900D4E220 /* Video + Stub.swift */; };
+		2A965944289AA36800D4E220 /* VideoListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A965943289AA36800D4E220 /* VideoListViewControllerTests.swift */; };
+		2A965946289AA4EF00D4E220 /* VideoListPresenterMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A965945289AA4EF00D4E220 /* VideoListPresenterMock.swift */; };
+		2A965949289AA88000D4E220 /* UIView + AccessibilityIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A965948289AA88000D4E220 /* UIView + AccessibilityIdentifier.swift */; };
+		2A96594B289AAD9100D4E220 /* Dispatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96594A289AAD9100D4E220 /* Dispatcher.swift */; };
+		2A96594D289AAE9100D4E220 /* DispatcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96594C289AAE9100D4E220 /* DispatcherMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +106,11 @@
 		2A96593A289A9D2800D4E220 /* ImageLoaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderMock.swift; sourceTree = "<group>"; };
 		2A96593C289A9DB100D4E220 /* VideoListViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewMock.swift; sourceTree = "<group>"; };
 		2A96593F289A9E7900D4E220 /* Video + Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Video + Stub.swift"; sourceTree = "<group>"; };
+		2A965943289AA36800D4E220 /* VideoListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewControllerTests.swift; sourceTree = "<group>"; };
+		2A965945289AA4EF00D4E220 /* VideoListPresenterMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListPresenterMock.swift; sourceTree = "<group>"; };
+		2A965948289AA88000D4E220 /* UIView + AccessibilityIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + AccessibilityIdentifier.swift"; sourceTree = "<group>"; };
+		2A96594A289AAD9100D4E220 /* Dispatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatcher.swift; sourceTree = "<group>"; };
+		2A96594C289AAE9100D4E220 /* DispatcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherMock.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +177,7 @@
 		2A9658D02899229500D4E220 /* DailyMotionTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A965947289AA82100D4E220 /* Utils */,
 				2A965933289A9B8D00D4E220 /* Flows */,
 			);
 			path = DailyMotionTests;
@@ -229,6 +240,7 @@
 			children = (
 				2A9658FC28993ED200D4E220 /* LayoutGuideProvider.swift */,
 				2A9658FE2899418300D4E220 /* ReuseIdentifiable.swift */,
+				2A96594A289AAD9100D4E220 /* Dispatcher.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -293,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				2A965935289A9C0F00D4E220 /* VideoListPresenterTests.swift */,
+				2A965943289AA36800D4E220 /* VideoListViewControllerTests.swift */,
 				2A96593E289A9E6100D4E220 /* Stub */,
 				2A965937289A9C2D00D4E220 /* Mocks */,
 			);
@@ -303,8 +316,10 @@
 			isa = PBXGroup;
 			children = (
 				2A965938289A9C4500D4E220 /* VideoListServiceMock.swift */,
+				2A965945289AA4EF00D4E220 /* VideoListPresenterMock.swift */,
 				2A96593A289A9D2800D4E220 /* ImageLoaderMock.swift */,
 				2A96593C289A9DB100D4E220 /* VideoListViewMock.swift */,
+				2A96594C289AAE9100D4E220 /* DispatcherMock.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -315,6 +330,14 @@
 				2A96593F289A9E7900D4E220 /* Video + Stub.swift */,
 			);
 			path = Stub;
+			sourceTree = "<group>";
+		};
+		2A965947289AA82100D4E220 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				2A965948289AA88000D4E220 /* UIView + AccessibilityIdentifier.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -468,6 +491,7 @@
 				2A9658BB2899229200D4E220 /* AppDelegate.swift in Sources */,
 				2A96591C289A7FA400D4E220 /* String + Extensions.swift in Sources */,
 				2A9659092899606300D4E220 /* VideoListService.swift in Sources */,
+				2A96594B289AAD9100D4E220 /* Dispatcher.swift in Sources */,
 				2A9658EC28992F9F00D4E220 /* Coordinator.swift in Sources */,
 				2A96591228997F8B00D4E220 /* Context.swift in Sources */,
 				2A96590E28997C8800D4E220 /* VideoListPresenter.swift in Sources */,
@@ -481,8 +505,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A965949289AA88000D4E220 /* UIView + AccessibilityIdentifier.swift in Sources */,
 				2A965936289A9C0F00D4E220 /* VideoListPresenterTests.swift in Sources */,
+				2A96594D289AAE9100D4E220 /* DispatcherMock.swift in Sources */,
 				2A965939289A9C4500D4E220 /* VideoListServiceMock.swift in Sources */,
+				2A965946289AA4EF00D4E220 /* VideoListPresenterMock.swift in Sources */,
+				2A965944289AA36800D4E220 /* VideoListViewControllerTests.swift in Sources */,
 				2A965940289A9E7900D4E220 /* Video + Stub.swift in Sources */,
 				2A96593D289A9DB100D4E220 /* VideoListViewMock.swift in Sources */,
 				2A96593B289A9D2800D4E220 /* ImageLoaderMock.swift in Sources */,
