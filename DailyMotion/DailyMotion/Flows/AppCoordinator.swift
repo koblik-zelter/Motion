@@ -9,9 +9,9 @@ import UIKit
 
 final class AppCoordinator: Coordinator {
 
-    let window: UIWindow
-    let factory: AppFactoryProtocol
-    var childCoordinators: [Coordinator] = []
+    private let window: UIWindow
+    private let factory: AppFactoryProtocol
+    private var childCoordinators: [Coordinator] = []
 
     init(window: UIWindow, factory: AppFactoryProtocol) {
         self.window = window
