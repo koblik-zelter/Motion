@@ -37,6 +37,11 @@
 		2A965925289A883F00D4E220 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A965924289A883F00D4E220 /* Constants.swift */; };
 		2A96592B289A915F00D4E220 /* APIEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96592A289A915F00D4E220 /* APIEnvironment.swift */; };
 		2A96592D289A920900D4E220 /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96592C289A920900D4E220 /* AppConfig.swift */; };
+		2A965936289A9C0F00D4E220 /* VideoListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A965935289A9C0F00D4E220 /* VideoListPresenterTests.swift */; };
+		2A965939289A9C4500D4E220 /* VideoListServiceMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A965938289A9C4500D4E220 /* VideoListServiceMock.swift */; };
+		2A96593B289A9D2800D4E220 /* ImageLoaderMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96593A289A9D2800D4E220 /* ImageLoaderMock.swift */; };
+		2A96593D289A9DB100D4E220 /* VideoListViewMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96593C289A9DB100D4E220 /* VideoListViewMock.swift */; };
+		2A965940289A9E7900D4E220 /* Video + Stub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A96593F289A9E7900D4E220 /* Video + Stub.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +96,11 @@
 		2A965924289A883F00D4E220 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		2A96592A289A915F00D4E220 /* APIEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEnvironment.swift; sourceTree = "<group>"; };
 		2A96592C289A920900D4E220 /* AppConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
+		2A965935289A9C0F00D4E220 /* VideoListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListPresenterTests.swift; sourceTree = "<group>"; };
+		2A965938289A9C4500D4E220 /* VideoListServiceMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListServiceMock.swift; sourceTree = "<group>"; };
+		2A96593A289A9D2800D4E220 /* ImageLoaderMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderMock.swift; sourceTree = "<group>"; };
+		2A96593C289A9DB100D4E220 /* VideoListViewMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewMock.swift; sourceTree = "<group>"; };
+		2A96593F289A9E7900D4E220 /* Video + Stub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Video + Stub.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +167,7 @@
 		2A9658D02899229500D4E220 /* DailyMotionTests */ = {
 			isa = PBXGroup;
 			children = (
+				2A965933289A9B8D00D4E220 /* Flows */,
 			);
 			path = DailyMotionTests;
 			sourceTree = "<group>";
@@ -268,6 +279,42 @@
 				2A965924289A883F00D4E220 /* Constants.swift */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2A965933289A9B8D00D4E220 /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				2A965934289A9BBC00D4E220 /* VideoList */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		2A965934289A9BBC00D4E220 /* VideoList */ = {
+			isa = PBXGroup;
+			children = (
+				2A965935289A9C0F00D4E220 /* VideoListPresenterTests.swift */,
+				2A96593E289A9E6100D4E220 /* Stub */,
+				2A965937289A9C2D00D4E220 /* Mocks */,
+			);
+			path = VideoList;
+			sourceTree = "<group>";
+		};
+		2A965937289A9C2D00D4E220 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				2A965938289A9C4500D4E220 /* VideoListServiceMock.swift */,
+				2A96593A289A9D2800D4E220 /* ImageLoaderMock.swift */,
+				2A96593C289A9DB100D4E220 /* VideoListViewMock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		2A96593E289A9E6100D4E220 /* Stub */ = {
+			isa = PBXGroup;
+			children = (
+				2A96593F289A9E7900D4E220 /* Video + Stub.swift */,
+			);
+			path = Stub;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +481,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A965936289A9C0F00D4E220 /* VideoListPresenterTests.swift in Sources */,
+				2A965939289A9C4500D4E220 /* VideoListServiceMock.swift in Sources */,
+				2A965940289A9E7900D4E220 /* Video + Stub.swift in Sources */,
+				2A96593D289A9DB100D4E220 /* VideoListViewMock.swift in Sources */,
+				2A96593B289A9D2800D4E220 /* ImageLoaderMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
