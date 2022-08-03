@@ -36,11 +36,11 @@ final class VideoListService: VideoListServiceProtocol {
 
     private static let pageSize = 20
 
-    var lastResponse: VideoListResponse?
+    private var lastResponse: VideoListResponse?
 
-    let httpClient: HTTPClientProtocol
-    let appConfig: AppConfig
-    let jsonDecoder: JSONDecoder
+    private let httpClient: HTTPClientProtocol
+    private let appConfig: AppConfig
+    private let jsonDecoder: JSONDecoder
 
     init(httpClient: HTTPClientProtocol,
          appConfig: AppConfig,

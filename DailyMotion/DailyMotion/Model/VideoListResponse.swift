@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct VideoListResponse: Decodable {
+struct VideoListResponse: Codable, Equatable {
     let page: Int
     let limit: Int
     let total: Int
