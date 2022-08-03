@@ -50,6 +50,15 @@ class VideoListViewControllerTests: XCTestCase {
         XCTAssertTrue(activityIndicator.isHidden)
     }
 
+    func testReportsDelegateVideoWasSelected() {
+        presenter.videos = [.stub(), .stub(), .stub()]
+        sut.loadViewIfNeeded()
+
+        sut.tableView(UITableView(), didSelectRowAt: IndexPath(row: 0, section: 0))
+
+        XCTAssertEqual(videoListViewControllerDidSelectVideoCallCount, 1)
+    }
+
     func testDisplayAlertWhenErrorOccured() {
         let window = UIWindow()
         window.rootViewController = sut
@@ -60,7 +69,6 @@ class VideoListViewControllerTests: XCTestCase {
 
         waitAlerPresentation(on: sut)
     }
-
     
     private func waitAlerPresentation(on viewController: UIViewController) {
         let animationFinishedPredicate = NSPredicate { vc, _ in
